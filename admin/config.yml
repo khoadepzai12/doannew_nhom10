@@ -1,25 +1,25 @@
 backend:
   name: git-gateway
-  branch: main # Thay đổi theo branch mà bạn đang sử dụng trong kho lưu trữ Git của bạn
+  branch: main # Thay đổi "main" thành nhánh mà bạn đang sử dụng trong repo của mình
 
-media_folder: "images" # Thư mục để lưu trữ các tệp media
+media_folder: "images" # Thư mục nơi các tệp media (như hình ảnh) sẽ được lưu
 public_folder: "/images" # Đường dẫn công khai tới các tệp media
 
 collections:
   - name: "introduction"
     label: "Giới Thiệu"
-    folder: "content/introduction" # Thư mục lưu trữ nội dung Giới Thiệu
+    folder: "content/introduction"
     create: true
-    slug: "giới-thiệu"
+    slug: "{{slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Content", name: "content", widget: "markdown" }
 
   - name: "attractions"
     label: "Địa Điểm Tham Quan"
-    folder: "content/attractions" # Thư mục lưu trữ nội dung Địa Điểm Tham Quan
+    folder: "content/attractions"
     create: true
-    slug: "{{slug}}" # Tạo slug từ tiêu đề
+    slug: "{{slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Description", name: "description", widget: "text" }
@@ -27,19 +27,17 @@ collections:
 
   - name: "gallery"
     label: "Thư Viện Ảnh"
-    folder: "content/gallery" # Thư mục lưu trữ các ảnh thư viện
+    folder: "content/gallery"
     create: true
-    slug: "thư-viện-ảnh"
+    slug: "{{slug}}"
     fields:
-      - { label: "Images", name: "images", widget: "list", field: 
-          { name: "image", widget: "image" } 
-        }
+      - { label: "Images", name: "images", widget: "list", field: { name: "image", widget: "image" } }
 
   - name: "contact"
     label: "Liên Hệ"
-    folder: "content/contact" # Thư mục lưu trữ nội dung Liên Hệ
+    folder: "content/contact"
     create: true
-    slug: "liên-hệ"
+    slug: "{{slug}}"
     fields:
       - { label: "Email", name: "email", widget: "string" }
       - { label: "Address", name: "address", widget: "string" }
