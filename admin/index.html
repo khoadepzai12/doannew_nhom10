@@ -17,11 +17,11 @@
 <body>
     <script>
         // Khởi tạo DecapCMS sau khi tài nguyên đã được tải
-        window.addEventListener('load', () => {
-            if (window.NetlifyCMS) {
-                window.NetlifyCMS.init();
-            } else {
+        window.addEventListener('DOMContentLoaded', () => {
+            if (window.CMS_MANUAL_INIT) {
                 console.error('NetlifyCMS không được tải.');
+            } else {
+                window.NetlifyCMS.init();
             }
         });
     </script>
