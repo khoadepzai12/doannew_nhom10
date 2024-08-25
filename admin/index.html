@@ -4,25 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DecapCMS - Admin</title>
-    <link rel="stylesheet" href="https://unpkg.com/netlify-cms@2.10.0/dist/netlify-cms.css">
-    <script src="https://unpkg.com/netlify-cms@2.10.0/dist/netlify-cms.js"></script>
-    <style
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f7f7f7;
-        }
-    </style>
+    <link rel="stylesheet" href="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.css">
 </head>
 <body>
+    <!-- Phần tử này sẽ là nơi CMS sẽ được mount -->
     <div id="nc-root"></div>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            if (window.CMS_MANUAL_INIT) {
-                console.error('NetlifyCMS không được tải.');
-            } else {
-                window.CMS.init();
-            }
-        });
-    </script>
+
+    <!-- Import script -->
+    <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+    <script src="path/to/your/index.js"></script>
 </body>
 </html>
