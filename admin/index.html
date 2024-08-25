@@ -16,10 +16,14 @@
 </head>
 <body>
     <script>
-        // Khởi tạo DecapCMS
-        window.CMS_MANUAL_INIT = true;
-        window.NetlifyCMS = require('netlify-cms-app');
-        window.NetlifyCMS.init();
+        // Khởi tạo DecapCMS sau khi tài nguyên đã được tải
+        window.addEventListener('load', () => {
+            if (window.NetlifyCMS) {
+                window.NetlifyCMS.init();
+            } else {
+                console.error('NetlifyCMS không được tải.');
+            }
+        });
     </script>
 </body>
 </html>
